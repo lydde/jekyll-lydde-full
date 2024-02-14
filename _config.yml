@@ -1,0 +1,199 @@
+#
+# Welcome to LYDDE Group Website system
+# Version : 1.0.0
+#
+# This site is a bootstrap 5.3 theme for Jekyll engine
+# This config file is meant for settings that affect your whole site, values
+# which you are expected to set up once and rarely edit after that.
+# Others settings are in /_settings/
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+
+#
+# Theme
+#
+# Theme can be used from GEM Package or from GitHub Repos
+# Default and recommanded usage is to rely on GitHub, to get latest version, even unpublished on GEM
+# If you rely on GEM, uncomment theme and comment remote_theme
+#
+# theme: jekyll-theme-lydde
+remote_theme: lydde/jekyll-lydde-theme
+
+#
+# Localization
+#
+# These are used to assist search engine and browser exposing the right language to user.
+# If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
+# otherwise, the layout language will use the default value of 'en'.
+#
+language: en # The language of the webpage
+locale: en_US # The language of the webpage
+timezone: Europe/Paris # Your website timezone
+
+#
+# Hosting
+#
+url: "https://play.yaka.games/" # the base hostname & protocol for your site, e.g. https://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+permalink: /news/:categories/:title # the subpath of your posts, e.g. /news
+
+# 
+# Site
+# 
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+#
+title: Your awesome title # Your website title (must be less than 50 char for SEO)
+tagline: a Great pushline # Used in Title (should be limited to 50 char for SEO)
+description: >- # used by SEO meta description and in feed.xml
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+
+#
+# Authors
+#
+authors:
+  default: 
+  # Change to your Company name (or keep as is)
+  # It will be displayed as the default author of the posts and the copyright owner in the Footer
+    name: LYDDE Group
+  # Change to your contact email address
+  # It will be used for email link
+    email: contact@lydde.com
+  # Change to your website
+  # It will be used in posts
+    site: https://lydde.com
+  # Add all authors
+  author-1:
+    # Change to your full name.
+    name: Author 1
+    # Change to your position.
+    position: An editor on this Blog
+    # Change to your email.
+    email: example@domain.com
+    # Change to your picture.
+    picture: "/assets/images/avatar.jpg"
+    # Set your social network for user interaction
+    # It will be displayed as the bottom of the posts
+    social:
+      # Set your twitter information
+      twitter:
+        # Change to your user name (without @) - Used for ping back
+        username: author-1
+        # Change to your Twitter homepage
+        link: https://twitter.com/author-1
+      # Set your GitHub information
+      github:
+        username: author-1
+        link: https://github.com/author-1
+      # Set your Linkedin information
+      linkedin:
+        name: LinkedIn
+        link: https://www.linkedin.com/author-1
+      # Set your blog information
+      blog: 
+        link: https://domain.com
+      # Set your website
+      site: https://domain.com
+    description: >
+      Suspendisse vel tellus efficitur, placerat quam ullamcorper, congue velit. 
+      Nullam rhoncus luctus semper. Sed at vestibulum arcu, eu ornare erat. 
+      Nunc nibh elit, egestas eget finibus eget, vestibulum et arcu. Quisque luctus in nisi in dapibus. 
+      Aenean eu nisl ut sapien maximus interdum ut ut ipsum. Nam tortor leo, ultrices dignissim varius a, luctus quis purus. 
+      Nam a sapien sed risus porta aliquet a vitae leo. Fusce bibendum, lectus a pellentesque sollicitudin, risus nisi dictum ante, a eleifend elit eros vitae mauris. Phasellus porttitor, augue eu accumsan vulputate, enim nulla digni
+
+#
+# Brand
+#
+# These are used to marketize your brand. If you look in the HTML files,
+# you will see them in the header and the NavMenu.
+#
+logo: "/assets/logo.png" # if not set, default theme logo will be applied
+favicon: "assets/icons/favicon.ico" # if not set, default theme icon will be applied
+
+# fill in your Google Analytics ID
+
+#
+# Collections
+#
+collections:
+  categories:
+    output: false
+  tags:
+    output: false
+  pages:
+    output: false
+  authors:
+    output: false
+    
+#
+# Defaults values
+#
+defaults:
+# all posts
+  - scope:
+      path: "" # An empty string here means all files in the project
+      type: posts
+    values:
+      layout: post
+      image: /assets/images/post.jpeg
+      author: author-1
+# all categories
+  - scope:
+      path: ""
+      type: categories
+    values:
+      layout: page
+      image: /assets/images/page.jpeg
+# all tags
+  - scope:
+      path: ""
+      type: tags
+    values:
+      layout: page
+      image: /assets/images/page.jpeg
+# all pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+      image: /assets/images/page.jpeg
+      
+#
+# Plugins
+#
+plugins:
+  - jekyll-relative-links   #https://github.com/benbalter/jekyll-relative-links
+  - jekyll-github-metadata  #https://github.com/jekyll/github-metadata
+  - jekyll-redirect-from    #https://github.com/jekyll/jekyll-redirect-from
+  - jekyll-remote-theme     #https://github.com/benbalter/jekyll-remote-theme
+
+#
+# Plugin settings
+#
+relative_links:
+  enabled:     true
+  collections: true
+
+#
+# Files excluded
+#
+exclude:
+  - readme.md
+  - LICENSE
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - "*.gem"
+  - "*.gemspec"
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
